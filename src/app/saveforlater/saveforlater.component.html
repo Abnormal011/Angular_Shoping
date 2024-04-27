@@ -1,0 +1,43 @@
+<div class="rounded-lg md:w-2/3" style="overflow-y: scroll;">
+    <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
+        *ngFor="let collection of SaveForLaterProducts">
+        <p> {{collection.length}} </p>
+
+        <p> {{collection.date | date:'medium'}} </p>
+        <p *ngFor="let product of collection.collection"> {{product.title}} </p>
+        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600"
+            routerLink="addform" routerLinkActive="active" ariaCurrentWhenActive="page"
+            (click)="checkout(collection.collection)">Check out</button>
+    </div>
+</div>
+
+<div class="flex my-5 text-lg" style="display: flex; justify-content: center; align-items: center;"
+    *ngIf="SaveForLaterProducts.length == 0">
+    You Don't Have Any Saved Products !!!!
+</div>
+
+<div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 "
+    style="display: flex; align-items: center;" *ngIf="SaveForLaterProducts.length > 0">
+    <div *ngFor="let collection of SaveForLaterProducts">
+
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"> Total Products :
+                {{totalproducts}}</h5>
+        </a>
+
+        <div>
+            Products :- <div *ngFor="let product of collection.collection">
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {{product.title}}
+                    <span class="text-sm"> x{{product.quantity}}</span>
+                </p>
+            </div>
+
+            Categories : <div *ngFor="let category of Productscategories" style="display:inline-flex">
+                <div class="mb-3 font-normal text-gray-700 dark:text-gray-400"> {{category}}&nbsp;</div>
+            </div>
+        </div>
+        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600"
+            routerLink="addform" routerLinkActive="active" ariaCurrentWhenActive="page"
+            (click)="checkout(collection.collection)">Check out</button>
+    </div>
+</div>

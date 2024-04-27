@@ -1,0 +1,187 @@
+<div class="max-w-md mx-auto" *ngIf="slip == false">
+
+    <form [formGroup]="userform"> 
+
+        
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="floating_email" id="floating_email"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            [(ngModel)]="username" placeholder="" formControlName="name"/>
+        <label for="floating_email"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
+        <div *ngIf="userform.controls['name'].invalid && (isformsubmitted || userform.controls['name'].touched || userform.controls['name'].dirty)">
+            <span class="text-red-700" *ngIf="userform.controls['name'].errors?.['required']">This Is Required</span>
+        </div>
+    </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="floating_email" id="floating_email"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" " [(ngModel)]="useremail" formControlName="email"/>
+        <label for="floating_email"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+            address</label>
+            <div *ngIf="userform.controls['email'].invalid && (isformsubmitted || userform.controls['email'].touched || userform.controls['email'].dirty)">
+                <span class="text-red-700" *ngIf="userform.controls['email'].errors?.['required']">This Is Required</span>
+                <span class="text-red-700" *ngIf="userform.controls['email'].errors?.['pattern']">email is not in correct formate </span>
+            </div>
+    </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="floating_password" id="floating_password"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" " required [(ngModel)]="userphoneno" formControlName="no"/>
+        <label for="floating_password"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+            No.</label>
+            <div *ngIf="userform.controls['no'].invalid && (isformsubmitted || userform.controls['no'].touched || userform.controls['no'].dirty)">
+                <span class="text-red-700" *ngIf="userform.controls['no'].errors?.['required']">This Is Required</span>
+                <span class="text-red-700" *ngIf="userform.controls['no'].errors?.['pattern']">aplhabates are not allowed!! </span>
+            </div>
+    </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="repeat_password" id="floating_repeat_password"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" " required [(ngModel)]="add1" formControlName="add1" />
+        <label for="floating_repeat_password"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">AddLine-1</label>
+            <div *ngIf="userform.controls['add1'].invalid && (isformsubmitted || userform.controls['add1'].touched || userform.controls['add1'].dirty)">
+                <span class="text-red-700" *ngIf="userform.controls['add1'].errors?.['required']">This Is Required</span>
+            </div>
+        </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <input type="text" name="repeat_password" id="floating_repeat_password"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" " required [(ngModel)]="add2" formControlName="add2"/>
+        <label for="floating_repeat_password"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">AddLine-2</label>
+            <div *ngIf="userform.controls['add2'].invalid && (isformsubmitted || userform.controls['add2'].touched || userform.controls['add2'].dirty)">
+                <span class="text-red-700" *ngIf="userform.controls['add2'].errors?.['required']">This Is Required</span>
+            </div>
+        </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <div class="max-w-full mx-auto">
+            <select name="Countries" [(ngModel)]="selectcountry" formControlName="selectcountry"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a Country</option>
+                <option *ngFor="let country of countries" value="{{country.isoCode}}">{{country.name}}</option>
+            </select>
+        </div>
+        <div *ngIf="userform.controls['selectcountry'].invalid && (isformsubmitted || userform.controls['selectcountry'].touched || userform.controls['selectcountry'].dirty)">
+            <span class="text-red-700" *ngIf="userform.controls['selectcountry'].errors?.['required']">This Is Required</span>
+        </div>
+    </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+        <div class="max-w-full mx-auto">
+            <select name="States" [(ngModel)]="selectstate" (click)="getstates()" formControlName="selectstate"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a State</option>
+                <option *ngFor="let state of states" value="{{state.isoCode}}">{{state.name}}
+                </option>
+            </select>
+        </div>
+        <div *ngIf="userform.controls['selectstate'].invalid && (isformsubmitted || userform.controls['selectstate'].touched || userform.controls['selectstate'].dirty)">
+            <span class="text-red-700" *ngIf="userform.controls['selectstate'].errors?.['required']">This Is Required</span>
+        </div>
+    </div>
+
+
+    <div class="relative z-0 w-full mb-5 group">
+            <div class="max-w-full mx-auto">
+                <select name="Cities" [(ngModel)]="selectcity" (click)="getcities()" formControlName="selectcity"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Choose a City</option>
+                    <option *ngFor="let city of cities">{{city.name}}
+                    </option>
+                </select>
+            </div>
+            <div *ngIf="userform.controls['selectcity'].invalid && (isformsubmitted || userform.controls['selectcity'].touched || userform.controls['selectcity'].dirty)">
+                <span class="text-red-700" *ngIf="userform.controls['selectcity'].errors?.['required']">This Is Required</span>
+            </div>
+    </div>
+
+    <button type="submit"
+        class="text-whte bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        (click)="addaddress()">Checkout</button>
+    </form>
+    </div>
+
+
+<!-- ORDERESLIP -->
+<div *ngIf="slip == true">
+    <div class="bg-white border rounded-lg shadow-lg px-6 py-8 max-w-md mx-auto mt-8" id="slip">
+        <div class="funds-checkmark-text-container">
+            <i class="fa-solid fa-bounce">
+            <div class="funds-checkmark-container">
+                <svg class="funds-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="funds-checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="funds-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+                <div class="funds-display-on-ie">
+                    <svg class="funds-ie-checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="funds-ie-checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="funds-ie-checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+            </div>
+            </i>
+            <h1 class="funds-success-done-text">Done!</h1>
+        </div>
+        <h1 class="font-bold text-2xl my-4 text-center text-blue-600">Flip-Amazone</h1>
+        <hr class="mb-2">
+        <div class="flex justify-between mb-6">
+            <h1 class="text-lg font-bold">Invoice</h1>
+            <div class="text-gray-700">
+                <div >Date: <span class="text-black font-bold-700">{{date}}</span></div>
+                <!-- <div>Invoice #: INV12345</div> -->
+            </div>
+        </div>
+        <div class="mb-8">
+            <h2 class="text-lg font-bold mb-4">Bill To:</h2>
+            <div class="text-gray-700 mb-2">{{username}}</div>
+            <div class="text-gray-700 mb-2">{{finaladd}}</div>
+            <div class="text-gray-700">{{useremail}}</div>
+        </div>
+        <table class="w-full mb-8">
+            <thead>
+                <tr>
+                    <th class="text-left font-bold text-gray-700">Description</th>
+                    <th class="text-right font-bold text-gray-700">Amount</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let product of orederproduct">
+                <tr>
+                    <td class="text-left text-gray-700">{{product.title}}  <span class="text-sm">x{{product.quantity}}</span></td>
+                    <td class="text-right text-gray-700">${{(product.price - (product.price *
+                        (product.discountPercentage/100))).toFixed(2)}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="text-left font-bold text-gray-700">Total</td>
+                    <td class="text-right font-bold text-gray-700">${{totalprice.toFixed(2)}}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="text-gray-700 mb-2"> You Have <i class="fa-beat-fade" style="color: #00850f;"> Saved </i> Total Of <i class="fa-solid fa-beat-fade" style="color: #00850f;"> ${{discountedprice.toFixed(2)}} </i> On This Purchase..
+        </div>
+
+        <div class="text-center">
+            <i class="fa-solid fa-fade font-bold"> T h a n k  Y o u  V i s i t  A g a i n  ! ! ! ! !</i>   
+    </div>
+
+    <button type="submit"
+        class="text-whte bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        (click)="printslip('slip')">Print</button>
+        </div>
+</div>
